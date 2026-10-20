@@ -1,0 +1,29 @@
+[[permission]]
+identifier = "allow-path-exists"
+description = "允许检查本地媒体文件是否存在"
+commands.allow = ["path_exists"]
+
+[[permission]]
+identifier = "allow-get-file-info"
+description = "允许读取本地文件基本信息"
+commands.allow = ["get_file_info"]
+
+[[permission]]
+identifier = "allow-reveal-in-folder"
+description = "允许在系统文件管理器中显示文件"
+commands.allow = ["reveal_in_folder"]
+
+[[permission]]
+identifier = "allow-move-source-file-to-trash"
+description = "允许将本地媒体源文件移动到废纸篓"
+commands.allow = ["move_source_file_to_trash"]
+
+[[permission]]
+identifier = "allow-read-text-file"
+description = "允许读取本地文本文件内容"
+commands.allow = ["read_text_file"]
+
+[[permission]]
+identifier = "allow-decrypt-ncm"
+description = "允许解密网易云音乐 NCM 文件"
+commands.allow = ["decrypt_ncm"]

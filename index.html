@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>咸鱼影音播放器</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        color: #1d1d1f;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+
+      #root {
+        width: 100%;
+        height: 100%;
+      }
+
+      #boot-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        background: #ffffff;
+        transition: opacity 0.28s ease;
+      }
+
+      #boot-splash.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .boot-mark {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at 32% 28%, #ff6b7d, #fa233b 58%, #c9182e);
+        color: #ffffff;
+        font-size: 34px;
+        box-shadow: 0 8px 24px rgba(250, 35, 59, 0.22);
+      }
+
+      .boot-spinner {
+        width: 28px;
+        height: 28px;
+        border: 3px solid #ffe5e8;
+        border-top-color: #fa233b;
+        border-radius: 50%;
+        animation: boot-spin 0.7s linear infinite;
+      }
+
+      .boot-title {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .boot-hint {
+        margin: 0;
+        font-size: 13px;
+        color: #8e8e93;
+      }
+
+      @keyframes boot-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="boot-splash" role="status" aria-live="polite">
+      <div class="boot-mark" aria-hidden="true">♫</div>
+      <div class="boot-spinner" aria-hidden="true"></div>
+      <p class="boot-title">咸鱼影音播放器</p>
+      <p class="boot-hint">正在加载资源…</p>
+    </div>
+    <div id="root"></div>
+    <script>
+      window.setTimeout(function () {
+        var hint = document.querySelector("#boot-splash:not(.is-hidden) .boot-hint");
+        if (hint) hint.textContent = "仍在加载，请稍候…";
+      }, 8000);
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

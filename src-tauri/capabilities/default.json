@@ -1,0 +1,27 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main, video player, pdf/md/image viewer windows",
+  "windows": ["main", "video-player-*", "pdf-viewer-*", "md-viewer-*", "image-viewer-*"],
+  "permissions": [
+    "core:default",
+    "core:webview:allow-create-webview-window",
+    "core:webview:allow-get-all-webviews",
+    "core:window:allow-create",
+    "core:window:allow-close",
+    "core:window:allow-set-focus",
+    "core:window:allow-set-title",
+    "core:window:allow-set-fullscreen",
+    "core:event:allow-emit",
+    "core:event:allow-emit-to",
+    "core:event:allow-listen",
+    "dialog:default",
+    "opener:default",
+    "allow-path-exists",
+    "allow-get-file-info",
+    "allow-reveal-in-folder",
+    "allow-move-source-file-to-trash",
+    "allow-read-text-file",
+    "allow-decrypt-ncm"
+  ]
+}
